@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TestProductEngineer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Khand:wght@300;600&family=Lato:wght@100;400&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="nav">
+      <img height="100%" src="https://s4-recruiting.cdn.greenhouse.io/external_greenhouse_job_boards/logos/400/687/800/original/xepelin_horizontal.png?1645111266">
+      <div class="flex-right">
+        <% if current_user %>
+            <div class="item">
+            <p>  <%= current_user.email%></p>
+            </div>
+          <div class="item">
+            <div class="button">
+              <%= link_to "Salir", destroy_user_session_path, method: :post %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= yield %>
+  </body>
+</html>

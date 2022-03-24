@@ -1,0 +1,40 @@
+<div class="center-modal"> 
+  <div class="form">
+  <h2>Registrarse</h2>
+  <div class="inside-form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <div class="input">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Usuario" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="input">
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Contraseña" %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="input">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirme su contraseña" %>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="field">
+          <div class="button">
+            <%= f.submit "Enviar" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+</div>

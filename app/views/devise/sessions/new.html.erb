@@ -1,0 +1,39 @@
+<div class="center-modal"> 
+  <div class="form">
+    <h2>Iniciar sesión</h2>
+    <div class="inside-form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
+        <div class="field">
+          <div class="input">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="input">
+            <%= f.password_field :password, autocomplete: "current-password",  placeholder: "contraseña"  %>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label 'Recordarme' %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <div class="field">
+            <div class="button">
+              <%= f.submit "Log in" %>
+            </div>
+          </div>
+        </div>
+        
+      <% end %>
+      </div>
+      <%= render "devise/shared/links" %>
+  </div>
+</div>
+
