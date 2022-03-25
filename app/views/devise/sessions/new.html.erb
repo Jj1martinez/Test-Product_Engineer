@@ -6,13 +6,13 @@
       
         <div class="field">
           <div class="input">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
           </div>
         </div>
 
         <div class="field">
           <div class="input">
-            <%= f.password_field :password, autocomplete: "current-password",  placeholder: "contraseña"  %>
+            <%= f.password_field :password, autocomplete: "current-password",  placeholder: "Contraseña"  %>
           </div>
         </div>
 
@@ -33,6 +33,7 @@
         
       <% end %>
       </div>
+      <%= render "devise/shared/error_messages" %>
       <%= render "devise/shared/links" %>
   </div>
 </div>
